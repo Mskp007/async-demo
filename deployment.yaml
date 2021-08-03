@@ -15,7 +15,7 @@ spec:
       containers:
       - name: sbapp
         image: springio/gs-spring-boot-docker
-        imagePullPolicy: Never
+#         imagePullPolicy: Never
         ports:
         - name: sbapp
           containerPort: 8083
