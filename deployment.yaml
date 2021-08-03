@@ -16,6 +16,13 @@ spec:
       - name: sbapp
         image: springio/gs-spring-boot-docker
 #         imagePullPolicy: Never
+        resources:
+          limits:
+            cpu: 1
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 250Mi
         ports:
         - name: sbapp
           containerPort: 8083
