@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: sbapp
-  replicas: 3
+#   replicas: 3
   template:
     metadata:
       labels:
@@ -14,26 +14,26 @@ spec:
     spec:
       containers:
       - name: sbapp
-        image: springio/gs-spring-boot-docker:1.0
+        image: springio/gs-spring-boot-docker
         imagePullPolicy: Never
         ports:
         - name: sbapp
           containerPort: 8083
           protocol: TCP
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: sbapp-lb
-  labels:
-    app: sbapp
-  annotations:
-    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
-    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
-    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "100"
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 8083
-  selector:
-    app: sbapp
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: sbapp-lb
+#   labels:
+#     app: sbapp
+#   annotations:
+#     service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
+#     service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
+#     service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "100"
+# spec:
+#   type: LoadBalancer
+#   ports:
+#   - port: 8083
+#   selector:
+#     app: sbapp
