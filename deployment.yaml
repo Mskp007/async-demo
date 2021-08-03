@@ -1,32 +1,39 @@
-apiVersion: apps/v1
+aapiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bb-demo
-  namespace: default
+  name: sbapp
 spec:
-  replicas: 1
   selector:
     matchLabels:
-      bb: web
+      app: sbapp
+  replicas: 3
   template:
     metadata:
       labels:
-        bb: web
+        app: sbapp
     spec:
       containers:
-      - name: bb-site
+      - name: sbapp
         image: springio/gs-spring-boot-docker:1.0
+        imagePullPolicy: Always
+        ports:
+        - name: sbapp
+          containerPort: 8083
+          protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bb-entrypoint
-  namespace: default
+  name: sbapp-lb
+  labels:
+    app: sbapp
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "100"
 spec:
-  type: NodePort
-  selector:
-    bb: web
+  type: LoadBalancer
   ports:
   - port: 8083
-    targetPort: 8083
-    nodePort: 30001
+  selector:
+    app: sbapp
