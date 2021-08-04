@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: sbapp
-        image: spring-boot-async-demo
+          image: springio/gs-spring-boot-docker
+#         image: spring-boot-async-demo
 #         imagePullPolicy: Never
         resources:
           limits:
