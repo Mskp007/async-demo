@@ -1,47 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sbapp
+  name: spring-boot-demo-deployment
+  labels:
+    app: spring-boot-demo
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: sbapp
-  replicas: 3
+      app: spring-boot-demo
   template:
     metadata:
       labels:
-        app: sbapp
+        app: spring-boot-demo
     spec:
       containers:
-      - name: sbapp
-          image: springio/gs-spring-boot-docker
-#         image: spring-boot-async-demo
-#         imagePullPolicy: Never
-        resources:
-          limits:
-            cpu: 1
-            memory: 1Gi
-          requests:
-            cpu: 100m
-            memory: 250Mi
+      - name: raspberrypimicrok8sjava
+        image: springio/raspberrypimicrok8sjava
         ports:
-        - name: sbapp
-          containerPort: 8080
-          protocol: TCP
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: sbapp-lb
-  labels:
-    app: sbapp
-  annotations:
-    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
-    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
-    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "100"
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080
-  selector:
-    app: sbapp
+        - containerPort: 8080
