@@ -25,12 +25,12 @@ public class TestEntityController {
     }
 
     @GetMapping("/do/async")
-    Mono<TestEntity> doSomeThingAsync() {
+    Mono<String> doSomeThingAsync() {
         return testEntityService.doSomeThingAsync();
     }
 
     @GetMapping("/do")
-    Mono<TestEntity> doSomeThing() {
+    Mono<String> doSomeThing() {
         return testEntityService.doSomeThing();
     }
 
