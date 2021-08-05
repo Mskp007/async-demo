@@ -49,7 +49,7 @@ public class TestEntityService {
         LocalDateTime end = LocalDateTime.now();
         System.err.println("EXECUTION TIME :: " + ChronoUnit.SECONDS.between(start, end));
         System.err.println("ENDED ;; AT : " + end);
-        String rt = String.valueOf(ChronoUnit.SECONDS.between(start, end))
+        String rt = String.valueOf(ChronoUnit.SECONDS.between(start, end));
         return Mono.just(rt);
     }
 
@@ -62,7 +62,7 @@ public class TestEntityService {
         LocalDateTime end = LocalDateTime.now();
         System.err.println("EXECUTION TIME :: " + ChronoUnit.SECONDS.between(start, end));
         System.err.println("ENDED ;; AT : " + end);
-        String rt = String.valueOf(ChronoUnit.SECONDS.between(start, end))
+        String rt = String.valueOf(ChronoUnit.SECONDS.between(start, end));
         return Mono.just(rt);
     }
 
