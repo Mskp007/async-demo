@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: raspberrypimicrok8sjava
-        image: localhost:5000/raspberrypimicrok8sjava:local
+        image: raspberrypimicrok8sjava:local
         ports:
         - containerPort: 8080
