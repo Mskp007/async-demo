@@ -49,7 +49,8 @@ public class TestEntityService {
         LocalDateTime end = LocalDateTime.now();
         System.err.println("EXECUTION TIME :: " + ChronoUnit.SECONDS.between(start, end));
         System.err.println("ENDED ;; AT : " + end);
-        return Mono.just(ChronoUnit.SECONDS.between(start, end));
+        String rt = String.valueOf(ChronoUnit.SECONDS.between(start, end))
+        return Mono.just(rt);
     }
 
     public Mono<TestEntity> doSomeThing() {
@@ -61,7 +62,8 @@ public class TestEntityService {
         LocalDateTime end = LocalDateTime.now();
         System.err.println("EXECUTION TIME :: " + ChronoUnit.SECONDS.between(start, end));
         System.err.println("ENDED ;; AT : " + end);
-        return Mono.just(ChronoUnit.SECONDS.between(start, end));
+        String rt = String.valueOf(ChronoUnit.SECONDS.between(start, end))
+        return Mono.just(rt);
     }
 
     @Transactional
