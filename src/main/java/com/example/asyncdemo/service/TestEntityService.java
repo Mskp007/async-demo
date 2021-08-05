@@ -38,7 +38,7 @@ public class TestEntityService {
         return testEntityRepo.findById(id);
     }
 
-    public Mono<TestEntity> doSomeThingAsync() {
+    public Mono<String> doSomeThingAsync() {
         LocalDateTime start = LocalDateTime.now();
         System.err.println("STARTED ;; AT : " + start);
         List<CompletableFuture<LocalDateTime>> result = new ArrayList();
@@ -53,7 +53,7 @@ public class TestEntityService {
         return Mono.just(rt);
     }
 
-    public Mono<TestEntity> doSomeThing() {
+    public Mono<String> doSomeThing() {
         LocalDateTime start = LocalDateTime.now();
         System.err.println("STARTED ;; AT : " + start);
         for (int i = 0; i <= 9; i++) {
