@@ -45,7 +45,7 @@ public class TestEntityController {
     }
     
     @GetMapping("/health")
-    Mono<String> getAll() {
+    Mono<String> getHealth() {
         return Mono.just("WORKING");
     }
 }
