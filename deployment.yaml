@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: raspberrypimicrok8sjava
-        image: raspberrypimicrok8sjava
+        image: springio/raspberrypimicrok8sjava
         ports:
         - containerPort: 8080
