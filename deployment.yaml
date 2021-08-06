@@ -35,5 +35,6 @@ spec:
   type: LoadBalancer
   ports:
   - port: 8083
+    nodePort: 30001
   selector:
     app: sbapp
