@@ -43,4 +43,9 @@ public class TestEntityController {
     Flux<TestEntity> getAll() {
         return testEntityService.getAll();
     }
+    
+    @GetMapping("/health")
+    Mono<String> getAll() {
+        return Mono.just("WORKING");
+    }
 }
