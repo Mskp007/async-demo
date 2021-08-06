@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-demo-deployment
+  name: spring-boot-demo-deployment1
   labels:
     app: spring-boot-demo
 spec:
@@ -14,7 +14,7 @@ spec:
         app: spring-boot-demo
     spec:
       containers:
-      - name: raspberrypimicrok8sjava
+      - name: raspberrypimicrok8sjava1
         image: springio/raspberrypimicrok8sjava
         imagePullPolicy: Never
         ports:
