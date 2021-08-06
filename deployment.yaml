@@ -17,6 +17,6 @@ spec:
       containers:
       - name: raspberrypimicrok8sjava
         image: springio/raspberrypimicrok8sjava
-        image-pull-policy: Never
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
